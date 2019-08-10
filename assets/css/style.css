@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+};
+
+#quiz-area {
+  background: gold;
+}
+
+#start {
+  background: red;
+  color: gold;
+  padding: 20px;
+  margin: 0 auto;
+}
