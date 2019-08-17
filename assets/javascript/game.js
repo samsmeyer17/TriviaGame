@@ -25,23 +25,13 @@ var questions = [
   {
     question: "Who killed Barry Allen's mother?",
     answers: ["Savitar", "Godspeed", "The Reverse Flash", "Gorilla Grodd"],
-    correctAnswer: "The Revers Flash"
+    correctAnswer: "The Reverse Flash"
   },
   {
-    question: "What is the name of ",
-    answers: ["Dice", "Mirror", "Fresh", "Cab"],
-    correctAnswer: "Fresh"
+    question: "What is the name of The Reverse Flash?",
+    answers: ["Eobard Thawne", "Hunter Zolomon", "Joe West", "Bart Allen"],
+    correctAnswer: "Eobard Thawne"
   },
-  {
-    question: "What was Doug's best friend's name?",
-    answers: ["Skeeter", "Mark", "Zach", "Cody"],
-    correctAnswer: "Skeeter"
-  },
-  {
-    question: "What was the name of the principal at Bayside High in Saved By The Bell?",
-    answers: ["Mr.Zhou", "Mr.Driggers", "Mr.Belding", "Mr.Page"],
-    correctAnswer: "Mr.Belding"
-  }
 ];
 
 // Variable that will hold the setInterval

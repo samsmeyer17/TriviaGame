@@ -2,12 +2,22 @@
   box-sizing: border-box;
 };
 
+body {
+  background: gold;
+  color: darkred;
+}
+
+.jumbotron {
+  background: gold;
+  color: darkred;
+}
+
 #quiz-area {
   background: gold;
 }
 
 #start {
-  background: red;
+  background: darkred;
   color: gold;
   padding: 20px;
   margin: 0 auto;
