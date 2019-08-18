@@ -5,15 +5,31 @@
 body {
   background: gold;
   color: darkred;
+  overflow: scroll;
 }
 
-.jumbotron {
-  background: gold;
-  color: darkred;
+#header > h1 {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+#header > p {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center
 }
 
 #quiz-area {
-  background: gold;
+  background: white;
+  color: darkred;
+  text-align: center;
+}
+
+#sub-wrapper {
+  color: darkred;
+  text-align: center;
+  margin: 20px;
 }
 
 #start {
@@ -21,4 +37,13 @@ body {
   color: gold;
   padding: 20px;
   margin: 0 auto;
+  width: 100%;
+}
+
+#done {
+  clear: left;
+  color: gold;
+  background: darkred;
+  margin: 30px;
+  padding: 30px;
 }

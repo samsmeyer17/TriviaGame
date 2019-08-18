@@ -40,22 +40,30 @@ var timer;
 var game = {
   correct: 0,
   incorrect: 0,
-  counter: 120,
+  counter: 60,
 
-  countdown: function() {
+  countdown: function () {
     game.counter--;
     $("#counter-number").html(game.counter);
     if (game.counter === 0) {
-      console.log("TIME UP");
+      card.html("<h2>All Done!</h2>");
+      card.append("<h3>Correct Answers: " + this.correct + "</h3>");
+      card.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
       game.done();
+    }
+    if (game.counter === 10) {
+      $("#sub-wrapper").append("<h2 id='alert'>Ten Seconds Left!</h2>")
+    }
+    else if (game.counter === 8) {
+      $("#alert").remove();
     }
   },
 
-  start: function() {
+  start: function () {
     timer = setInterval(game.countdown, 1000);
 
     $("#sub-wrapper").prepend(
-      "<h2>Time Remaining: <span id='counter-number'>120</span> Seconds</h2>"
+      "<h2>Time Remaining: <span id='counter-number'>60</span> Seconds</h2>"
     );
 
     $("#start").remove();
@@ -68,10 +76,10 @@ var game = {
       }
     }
 
-    card.append("<button id='done'>Done</button>");
+    card.append("<div><button id='done'>Done</button></div>");
   },
 
-  done: function() {
+  done: function () {
     var inputs = card.children("input:checked");
     for (var i = 0; i < inputs.length; i++) {
       if ($(inputs[i]).val() === questions[i].correctAnswer) {
@@ -83,7 +91,7 @@ var game = {
     this.result();
   },
 
-  result: function() {
+  result: function () {
     clearInterval(timer);
 
     $("#sub-wrapper h2").remove();
@@ -96,10 +104,10 @@ var game = {
 
 // CLICK EVENTS
 
-$(document).on("click", "#start", function() {
+$(document).on("click", "#start", function () {
   game.start();
 });
 
-$(document).on("click", "#done", function() {
+$(document).on("click", "#done", function () {
   game.done();
 });
