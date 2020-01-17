@@ -69,9 +69,9 @@ var game = {
     $("#start").remove();
 
     for (var i = 0; i < questions.length; i++) {
-      card.append("<h2>" + questions[i].question + "</h2>");
+      card.append("<h2 id='questions'>" + questions[i].question + "</h2>");
       for (var j = 0; j < questions[i].answers.length; j++) {
-        card.append("<input type='radio' name='question-" + i +
+        card.append("<input id='answers' type='radio' name='question-" + i +
           "' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
       }
     }
@@ -102,9 +102,9 @@ var game = {
     $(".result").remove()
 
     for (var i = 0; i < questions.length; i++) {
-      card.append("<h2>" + questions[i].question + "</h2>");
+      card.append("<h2 id='questions'>" + questions[i].question + "</h2>");
       for (var j = 0; j < questions[i].answers.length; j++) {
-        card.append("<input type='radio' name='question-" + i +
+        card.append("<input id='answers' type='radio' name='question-" + i +
           "' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
       }
     }

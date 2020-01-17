@@ -47,3 +47,11 @@ body {
   margin: 30px;
   padding: 30px;
 }
+
+#questions {
+  margin: 0 10px 0 0;
+}
+
+#answers {
+  margin: 0 0 0 10px;
+}
