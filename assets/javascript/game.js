@@ -91,14 +91,36 @@ var game = {
     this.result();
   },
 
+  restart: function() {
+    timer = setInterval(game.countdown, 1000);
+
+    $("#sub-wrapper").prepend(
+      "<h2>Time Remaining: <span id='counter-number'>60</span> Seconds</h2>"
+    );
+    $("#start").remove();
+    $("#restart").remove();
+    $(".result").remove()
+
+    for (var i = 0; i < questions.length; i++) {
+      card.append("<h2>" + questions[i].question + "</h2>");
+      for (var j = 0; j < questions[i].answers.length; j++) {
+        card.append("<input type='radio' name='question-" + i +
+          "' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
+      }
+    }
+
+    card.append("<div><button id='done'>Done</button></div>");
+  },
+
   result: function () {
     clearInterval(timer);
 
     $("#sub-wrapper h2").remove();
 
-    card.html("<h2>All Done!</h2>");
-    card.append("<h3>Correct Answers: " + this.correct + "</h3>");
-    card.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
+    card.html("<h2 class='result'>All Done!</h2>");
+    card.append("<h3 class='result'>Correct Answers: " + this.correct + "</h3>");
+    card.append("<h3 class='result'>Incorrect Answers: " + this.incorrect + "</h3>");
+    card.append("<button id='restart'>Take It Again!</button>");
   }
 };
 
@@ -111,3 +133,7 @@ $(document).on("click", "#start", function () {
 $(document).on("click", "#done", function () {
   game.done();
 });
+
+$(document).on('click', "#restart", function() {
+  game.restart()
+})
