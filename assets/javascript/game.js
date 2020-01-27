@@ -13,7 +13,7 @@ var questions = [
     correctAnswer: "Speed Force"
   },
   {
-    question: "In the Justice League Animated Series, who is The Flash is in the Justice League?",
+    question: "In the Justice League Animated Series, what is The Flash's alter ego in the Justice League?",
     answers: ["Barry Allen", "Wally West", "Jay Garrick", "Eobard Thawne"],
     correctAnswer: "Wally West"
   },
@@ -92,14 +92,15 @@ var game = {
   },
 
   restart: function() {
-    timer = setInterval(game.countdown, 1000);
+    
 
     $("#sub-wrapper").prepend(
       "<h2>Time Remaining: <span id='counter-number'>60</span> Seconds</h2>"
     );
     $("#start").remove();
     $("#restart").remove();
-    $(".result").remove()
+    $(".result").remove();
+    timer = setInterval(game.countdown, 1000);
 
     for (var i = 0; i < questions.length; i++) {
       card.append("<h2 id='questions'>" + questions[i].question + "</h2>");
